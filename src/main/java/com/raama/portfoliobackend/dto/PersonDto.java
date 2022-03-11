@@ -16,13 +16,14 @@ public class PersonDto {
     private String picLoc;
     @NotBlank
     private String location;
+    @NotBlank
     private String about;
 
     public PersonDto() {
     }
 
     public PersonDto(@NotBlank String firstName, @NotBlank String lastName, @NotBlank String title,
-            String picLoc, @NotBlank String location, String about) {
+            String picLoc, @NotBlank String location, @NotBlank String about) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.title = title;
