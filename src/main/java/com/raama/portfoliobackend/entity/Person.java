@@ -34,19 +34,19 @@ public class Person {
     private String about;
     
     @JsonIgnoreProperties("person")
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Experience> experiences = new HashSet<>();
     
     @JsonIgnoreProperties("person")
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Education> educations = new HashSet<>();
     
     @JsonIgnoreProperties("person")
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Project> projects = new HashSet<>();
     
     @JsonIgnoreProperties("person")
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Skill> skills = new HashSet<>();
 
     public Person() {

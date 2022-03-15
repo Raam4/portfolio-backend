@@ -74,18 +74,16 @@ public class ExperienceController {
         if(StringUtils.isBlank(experienceDto.getLocation()))
             return new ResponseEntity(new Message("Location is mandatory."), HttpStatus.BAD_REQUEST);
         if(experienceDto.getDateStart() == null)
-            return new ResponseEntity(new Message("Date is mandatory."), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Message("Start date is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(experienceDto.getDescription()))
             return new ResponseEntity(new Message("Description is mandatory."), HttpStatus.BAD_REQUEST);
         Experience experience = experienceService.getOne(id).get();
         experience.setPosition(experienceDto.getPosition());
         experience.setCompany(experienceDto.getCompany());
-        experience.setLogoLoc(experienceDto.getLogoLoc());
         experience.setLocation(experienceDto.getLocation());
         experience.setDateStart(experienceDto.getDateStart());
         experience.setDateEnd(experienceDto.getDateEnd());
         experience.setDescription(experienceDto.getDescription());
-        experience.setPerson(experienceDto.getPerson());
         experienceService.save(experience);
         return new ResponseEntity(new Message("Experience updated."), HttpStatus.OK);
     }
