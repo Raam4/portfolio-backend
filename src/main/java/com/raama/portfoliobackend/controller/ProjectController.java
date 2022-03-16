@@ -49,10 +49,8 @@ public class ProjectController {
             return new ResponseEntity(new Message("Name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getTechs()))
             return new ResponseEntity(new Message("Techs is mandatory."), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(projectDto.getPicLoc()))
-            return new ResponseEntity(new Message("Title is mandatory."), HttpStatus.BAD_REQUEST);
         if(projectDto.getDateYear() <= 0 || projectDto.getDateYear() > 2022)
-            return new ResponseEntity(new Message("Year is mandatory and it can´t be greater than 2022."), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Message("Year is mandatory and it can\'t be greater than 2022."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getLink()))
             return new ResponseEntity(new Message("Link is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getDescription()))
@@ -73,10 +71,8 @@ public class ProjectController {
             return new ResponseEntity(new Message("Name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getTechs()))
             return new ResponseEntity(new Message("Techs is mandatory."), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(projectDto.getPicLoc()))
-            return new ResponseEntity(new Message("Title is mandatory."), HttpStatus.BAD_REQUEST);
         if(projectDto.getDateYear() <= 0 || projectDto.getDateYear() > 2022)
-            return new ResponseEntity(new Message("Year is mandatory and it can´t be greater than 2022."), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Message("Year is mandatory and it can\'t be greater than 2022."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getLink()))
             return new ResponseEntity(new Message("Link is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getDescription()))
@@ -84,7 +80,6 @@ public class ProjectController {
         Project project = projectService.getOne(id).get();
         project.setName(projectDto.getName());
         project.setTechs(projectDto.getTechs());
-        project.setPicLoc(projectDto.getPicLoc());
         project.setDateYear(projectDto.getDateYear());
         project.setLink(projectDto.getLink());
         project.setDescription(projectDto.getDescription());
