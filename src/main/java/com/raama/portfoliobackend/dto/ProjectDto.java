@@ -1,6 +1,9 @@
 package com.raama.portfoliobackend.dto;
 
 import javax.validation.constraints.NotBlank;
+
+import com.raama.portfoliobackend.entity.Person;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,18 +22,20 @@ public class ProjectDto {
     private String link;
     @NotBlank
     private String description;
+    private Person person;
 
     public ProjectDto() {
     }
 
     public ProjectDto(@NotBlank String name, @NotBlank String techs, @NotBlank String picLoc,
-            @NotBlank int dateYear, @NotBlank String link, @NotBlank String description) {
+            @NotBlank int dateYear, @NotBlank String link, @NotBlank String description, Person person) {
         this.name = name;
         this.techs = techs;
         this.picLoc = picLoc;
         this.dateYear = dateYear;
         this.link = link;
         this.description = description;
+        this.person = person;
     }
     
 }

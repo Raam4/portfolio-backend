@@ -1,6 +1,7 @@
 package com.raama.portfoliobackend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,9 +26,10 @@ public class Skill {
     
     public Skill(){}
 
-    public Skill(String name, String type, String icon) {
+    public Skill(String name, String type, String icon, Person person) {
         this.name = name;
         this.type = type;
         this.icon = icon;
+        this.person = person;
     }
 }

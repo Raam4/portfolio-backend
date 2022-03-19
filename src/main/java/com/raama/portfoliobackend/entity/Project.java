@@ -35,12 +35,13 @@ public class Project {
     
     public Project(){}
 
-    public Project(String name, String techs, String picLoc, int dateYear, String link, String description) {
+    public Project(String name, String techs, String picLoc, int dateYear, String link, String description, Person person) {
         this.name = name;
         this.techs = techs;
         this.picLoc = picLoc;
         this.dateYear = dateYear;
         this.link = link;
         this.description = description;
+        this.person = person;
     }
 }
