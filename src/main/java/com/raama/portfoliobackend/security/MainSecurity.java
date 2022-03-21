@@ -1,5 +1,8 @@
 package com.raama.portfoliobackend.security;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import com.raama.portfoliobackend.security.jwt.JwtEntryPoint;
 import com.raama.portfoliobackend.security.jwt.JwtTokenFilter;
 import com.raama.portfoliobackend.security.service.UserDetailsServiceImpl;
@@ -54,8 +57,12 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+        configuration.setAllowedHeaders(Collections.singletonList("*"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        source.registerCorsConfiguration("/**", configuration);
         return source;
     }
 
