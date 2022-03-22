@@ -18,7 +18,7 @@ public class Skill {
     private int id;
     private String name;
     private String type;
-    private String icon;
+    private String imgUrl;
     
     @JsonIgnoreProperties("skills")
     @ManyToOne(optional = false)
@@ -26,10 +26,10 @@ public class Skill {
     
     public Skill(){}
 
-    public Skill(String name, String type, String icon, Person person) {
+    public Skill(String name, String type, String imgUrl, Person person) {
         this.name = name;
         this.type = type;
-        this.icon = icon;
+        this.imgUrl = imgUrl;
         this.person = person;
     }
 }

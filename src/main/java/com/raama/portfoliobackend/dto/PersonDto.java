@@ -13,7 +13,7 @@ public class PersonDto {
     private String lastName;
     @NotBlank
     private String title;
-    private String picLoc;
+    private String imgUrl;
     @NotBlank
     private String location;
     @NotBlank
@@ -23,11 +23,11 @@ public class PersonDto {
     }
 
     public PersonDto(@NotBlank String firstName, @NotBlank String lastName, @NotBlank String title,
-            String picLoc, @NotBlank String location, @NotBlank String about) {
+            String imgUrl, @NotBlank String location, @NotBlank String about) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.title = title;
-        this.picLoc = picLoc;
+        this.imgUrl = imgUrl;
         this.location = location;
         this.about = about;
     }

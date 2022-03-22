@@ -22,7 +22,7 @@ public class Project {
     private int id;
     private String name;
     private String techs;
-    private String picLoc;
+    private String imgUrl;
     private int dateYear;
     private String link;
     @Lob @Basic(fetch = FetchType.LAZY)
@@ -35,10 +35,10 @@ public class Project {
     
     public Project(){}
 
-    public Project(String name, String techs, String picLoc, int dateYear, String link, String description, Person person) {
+    public Project(String name, String techs, String imgUrl, int dateYear, String link, String description, Person person) {
         this.name = name;
         this.techs = techs;
-        this.picLoc = picLoc;
+        this.imgUrl = imgUrl;
         this.dateYear = dateYear;
         this.link = link;
         this.description = description;

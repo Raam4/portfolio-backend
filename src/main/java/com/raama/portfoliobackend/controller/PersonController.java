@@ -46,7 +46,7 @@ public class PersonController {
         if(StringUtils.isBlank(personDto.getLocation()))
             return new ResponseEntity(new Message("Location is mandatory."), HttpStatus.BAD_REQUEST);
         Person person = new Person(personDto.getFirstName(), personDto.getLastName(),
-                personDto.getTitle(), personDto.getPicLoc(), personDto.getLocation(),
+                personDto.getTitle(), personDto.getImgUrl(), personDto.getLocation(),
                 personDto.getAbout());
         personService.save(person);
         return new ResponseEntity(new Message("Person created."), HttpStatus.OK);
@@ -67,7 +67,7 @@ public class PersonController {
             return new ResponseEntity(new Message("Location is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(personDto.getAbout()))
             return new ResponseEntity(new Message("About is mandatory."), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(personDto.getPicLoc()))
+        if(StringUtils.isBlank(personDto.getImgUrl()))
             return new ResponseEntity(new Message("Pic location is mandatory."), HttpStatus.BAD_REQUEST);
         Person person = personService.getOne(id).get();
         person.setFirstName(personDto.getFirstName());
@@ -75,7 +75,7 @@ public class PersonController {
         person.setTitle(personDto.getTitle());
         person.setLocation(personDto.getLocation());
         person.setAbout(personDto.getAbout());
-        person.setPicLoc(personDto.getPicLoc());
+        person.setImgUrl(personDto.getImgUrl());
         personService.save(person);
         return new ResponseEntity(new Message("Person updated."), HttpStatus.OK);
     }

@@ -49,9 +49,9 @@ public class SkillController {
             return new ResponseEntity(new Message("Name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(skillDto.getType()))
             return new ResponseEntity(new Message("Type is mandatory."), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(skillDto.getIcon()))
+        if(StringUtils.isBlank(skillDto.getImgUrl()))
             return new ResponseEntity(new Message("Icon is mandatory."), HttpStatus.BAD_REQUEST);
-        Skill skill = new Skill(skillDto.getName(), skillDto.getType(), skillDto.getIcon(), skillDto.getPerson());
+        Skill skill = new Skill(skillDto.getName(), skillDto.getType(), skillDto.getImgUrl(), skillDto.getPerson());
         skillService.save(skill);
         return new ResponseEntity(new Message("Skill created."), HttpStatus.OK);
     }
@@ -65,12 +65,12 @@ public class SkillController {
             return new ResponseEntity(new Message("Name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(skillDto.getType()))
             return new ResponseEntity(new Message("Type is mandatory."), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(skillDto.getIcon()))
+        if(StringUtils.isBlank(skillDto.getImgUrl()))
             return new ResponseEntity(new Message("Icon is mandatory."), HttpStatus.BAD_REQUEST);
         Skill skill = skillService.getOne(id).get();
         skill.setName(skillDto.getName());
         skill.setType(skillDto.getType());
-        skill.setIcon(skillDto.getIcon());
+        skill.setImgUrl(skillDto.getImgUrl());
         skillService.save(skill);
         return new ResponseEntity(new Message("Skill updated."), HttpStatus.OK);
     }

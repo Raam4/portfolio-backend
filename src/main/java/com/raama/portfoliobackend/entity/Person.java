@@ -27,7 +27,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private String title;
-    private String picLoc;
+    private String imgUrl;
     private String location;
     @Lob @Basic(fetch = FetchType.LAZY)
     @Column (columnDefinition = "text")
@@ -52,11 +52,11 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String title, String picLoc, String location, String about) {
+    public Person(String firstName, String lastName, String title, String imgUrl, String location, String about) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.title = title;
-        this.picLoc = picLoc;
+        this.imgUrl = imgUrl;
         this.location = location;
         this.about = about;
     }

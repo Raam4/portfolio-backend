@@ -15,7 +15,7 @@ public class ProjectDto {
     @NotBlank
     private String techs;
     @NotBlank
-    private String picLoc;
+    private String imgUrl;
     @NotBlank
     private int dateYear;
     @NotBlank
@@ -27,11 +27,11 @@ public class ProjectDto {
     public ProjectDto() {
     }
 
-    public ProjectDto(@NotBlank String name, @NotBlank String techs, @NotBlank String picLoc,
+    public ProjectDto(@NotBlank String name, @NotBlank String techs, @NotBlank String imgUrl,
             @NotBlank int dateYear, @NotBlank String link, @NotBlank String description, Person person) {
         this.name = name;
         this.techs = techs;
-        this.picLoc = picLoc;
+        this.imgUrl = imgUrl;
         this.dateYear = dateYear;
         this.link = link;
         this.description = description;

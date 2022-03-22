@@ -56,7 +56,7 @@ public class ExperienceController {
         if(StringUtils.isBlank(experienceDto.getDescription()))
             return new ResponseEntity(new Message("Description is mandatory."), HttpStatus.BAD_REQUEST);
         Experience experience = new Experience(experienceDto.getPosition(), experienceDto.getCompany(),
-                experienceDto.getLogoLoc(), experienceDto.getLocation(), experienceDto.getDateStart(),
+                experienceDto.getImgUrl(), experienceDto.getLocation(), experienceDto.getDateStart(),
                 experienceDto.getDateEnd(), experienceDto.getDescription(), experienceDto.getPerson());
         experienceService.save(experience);
         return new ResponseEntity(new Message("Experience created."), HttpStatus.OK);

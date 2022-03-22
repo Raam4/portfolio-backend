@@ -13,7 +13,7 @@ public class ExperienceDto {
     private String position;
     @NotBlank
     private String company;
-    private String logoLoc;
+    private String imgUrl;
     @NotBlank
     private String location;
     @NotBlank
@@ -26,11 +26,11 @@ public class ExperienceDto {
     public ExperienceDto() {
     }
 
-    public ExperienceDto(@NotBlank String position, @NotBlank String company, String logoLoc,
+    public ExperienceDto(@NotBlank String position, @NotBlank String company, String imgUrl,
             @NotBlank String location, @NotBlank Date dateStart, Date dateEnd, @NotBlank String description, Person person) {
         this.position = position;
         this.company = company;
-        this.logoLoc = logoLoc;
+        this.imgUrl = imgUrl;
         this.location = location;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;

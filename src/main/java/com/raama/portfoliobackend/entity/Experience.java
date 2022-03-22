@@ -23,7 +23,7 @@ public class Experience {
     private int id;
     private String position;
     private String company;
-    private String logoLoc;
+    private String imgUrl;
     private String location;
     private Date dateStart;
     private Date dateEnd;
@@ -37,10 +37,10 @@ public class Experience {
     
     public Experience(){}
 
-    public Experience(String position, String company, String logoLoc, String location, Date dateStart, Date dateEnd, String description, Person person) {
+    public Experience(String position, String company, String imgUrl, String location, Date dateStart, Date dateEnd, String description, Person person) {
         this.position = position;
         this.company = company;
-        this.logoLoc = logoLoc;
+        this.imgUrl = imgUrl;
         this.location = location;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;

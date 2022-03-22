@@ -15,16 +15,16 @@ public class SkillDto {
     @NotBlank
     private String type;
     @NotBlank
-    private String icon;
+    private String imgUrl;
     private Person person;
 
     public SkillDto() {
     }
 
-    public SkillDto(@NotBlank String name, @NotBlank String type, @NotBlank String icon, Person person) {
+    public SkillDto(@NotBlank String name, @NotBlank String type, @NotBlank String imgUrl, Person person) {
         this.name = name;
         this.type = type;
-        this.icon = icon;
+        this.imgUrl = imgUrl;
         this.person = person;
     }
 }

@@ -56,7 +56,7 @@ public class ProjectController {
         if(StringUtils.isBlank(projectDto.getDescription()))
             return new ResponseEntity(new Message("Description is mandatory."), HttpStatus.BAD_REQUEST);
         Project project = new Project(projectDto.getName(), projectDto.getTechs(),
-                projectDto.getPicLoc(), projectDto.getDateYear(), projectDto.getLink(),
+                projectDto.getImgUrl(), projectDto.getDateYear(), projectDto.getLink(),
                 projectDto.getDescription(), projectDto.getPerson());
         projectService.save(project);
         return new ResponseEntity(new Message("Project created."), HttpStatus.OK);
