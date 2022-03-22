@@ -57,16 +57,25 @@ public class PersonController {
     public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody PersonDto personDto){
         if(!personService.existsById(id))
             return new ResponseEntity(new Message("Person doesn't exist"), HttpStatus.NOT_FOUND);
+        if(StringUtils.isBlank(personDto.getFirstName()))
+            return new ResponseEntity(new Message("First name is mandatory."), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(personDto.getLastName()))
+            return new ResponseEntity(new Message("Last name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(personDto.getTitle()))
             return new ResponseEntity(new Message("Title is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(personDto.getLocation()))
             return new ResponseEntity(new Message("Location is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(personDto.getAbout()))
             return new ResponseEntity(new Message("About is mandatory."), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(personDto.getPicLoc()))
+            return new ResponseEntity(new Message("Pic location is mandatory."), HttpStatus.BAD_REQUEST);
         Person person = personService.getOne(id).get();
+        person.setFirstName(personDto.getFirstName());
+        person.setLastName(personDto.getLastName());
         person.setTitle(personDto.getTitle());
         person.setLocation(personDto.getLocation());
         person.setAbout(personDto.getAbout());
+        person.setPicLoc(personDto.getPicLoc());
         personService.save(person);
         return new ResponseEntity(new Message("Person updated."), HttpStatus.OK);
     }
