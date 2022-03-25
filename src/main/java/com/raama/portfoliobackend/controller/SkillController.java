@@ -49,8 +49,6 @@ public class SkillController {
             return new ResponseEntity(new Message("Name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(skillDto.getType()))
             return new ResponseEntity(new Message("Type is mandatory."), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(skillDto.getImgUrl()))
-            return new ResponseEntity(new Message("Icon is mandatory."), HttpStatus.BAD_REQUEST);
         Skill skill = new Skill(skillDto.getName(), skillDto.getType(), skillDto.getImgUrl(), skillDto.getPerson());
         skillService.save(skill);
         return new ResponseEntity(new Message("Skill created."), HttpStatus.OK);
