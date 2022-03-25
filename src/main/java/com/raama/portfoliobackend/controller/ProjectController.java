@@ -49,6 +49,8 @@ public class ProjectController {
             return new ResponseEntity(new Message("Name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getTechs()))
             return new ResponseEntity(new Message("Techs is mandatory."), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(projectDto.getImgUrl()))
+            return new ResponseEntity(new Message("Image is mandatory."), HttpStatus.BAD_REQUEST);
         if(projectDto.getDateYear() <= 0 || projectDto.getDateYear() > 2022)
             return new ResponseEntity(new Message("Year is mandatory and it can\'t be greater than 2022."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getLink()))
@@ -71,6 +73,8 @@ public class ProjectController {
             return new ResponseEntity(new Message("Name is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getTechs()))
             return new ResponseEntity(new Message("Techs is mandatory."), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(projectDto.getImgUrl()))
+            return new ResponseEntity(new Message("Image is mandatory."), HttpStatus.BAD_REQUEST);
         if(projectDto.getDateYear() <= 0 || projectDto.getDateYear() > 2022)
             return new ResponseEntity(new Message("Year is mandatory and it can\'t be greater than 2022."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(projectDto.getLink()))
@@ -80,6 +84,7 @@ public class ProjectController {
         Project project = projectService.getOne(id).get();
         project.setName(projectDto.getName());
         project.setTechs(projectDto.getTechs());
+        project.setImgUrl(projectDto.getImgUrl());
         project.setDateYear(projectDto.getDateYear());
         project.setLink(projectDto.getLink());
         project.setDescription(projectDto.getDescription());

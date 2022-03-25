@@ -49,6 +49,8 @@ public class ExperienceController {
             return new ResponseEntity(new Message("Position is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(experienceDto.getCompany()))
             return new ResponseEntity(new Message("Company is mandatory."), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(experienceDto.getImgUrl()))
+            return new ResponseEntity(new Message("Image is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(experienceDto.getLocation()))
             return new ResponseEntity(new Message("Location is mandatory."), HttpStatus.BAD_REQUEST);
         if(experienceDto.getDateStart() == null)
@@ -71,6 +73,8 @@ public class ExperienceController {
             return new ResponseEntity(new Message("Position is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(experienceDto.getCompany()))
             return new ResponseEntity(new Message("Company is mandatory."), HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(experienceDto.getImgUrl()))
+            return new ResponseEntity(new Message("Image is mandatory."), HttpStatus.BAD_REQUEST);
         if(StringUtils.isBlank(experienceDto.getLocation()))
             return new ResponseEntity(new Message("Location is mandatory."), HttpStatus.BAD_REQUEST);
         if(experienceDto.getDateStart() == null)
@@ -80,6 +84,7 @@ public class ExperienceController {
         Experience experience = experienceService.getOne(id).get();
         experience.setPosition(experienceDto.getPosition());
         experience.setCompany(experienceDto.getCompany());
+        experience.setImgUrl(experienceDto.getImgUrl());
         experience.setLocation(experienceDto.getLocation());
         experience.setDateStart(experienceDto.getDateStart());
         experience.setDateEnd(experienceDto.getDateEnd());
